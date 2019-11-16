@@ -1,0 +1,19 @@
+﻿velge å flytte inn eller nye på frifeltet
+
+gi opp
+
+gå til lobby
+
+is spectaticg flag
+
+idle timeout do not recalculate pos
+
+animate dice til server response
+
+show inactive
+
+multiple lobbies
+
+screen scaling
+
+phone scaling
