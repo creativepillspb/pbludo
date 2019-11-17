@@ -72,7 +72,7 @@ function getUrlVars()
 $(document).ready(function () {
 var match=getUrlVars().match;
 if(match=='over'){
-    document.write("gameover");
+    document.write("<center>Game Over</center>");
 }
     var username=getUrlVars().username;
  $("#playerName").val(username);
