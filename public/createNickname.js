@@ -71,7 +71,7 @@ function getUrlVars()
 }
 $(document).ready(function () {
 var match=getUrlVars().match;
-if(match==''){
+if(match=='over'){
     document.write("gameover");
 }
     var username=getUrlVars().username;
