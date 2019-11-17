@@ -164,11 +164,9 @@ function logout() {
     window.location.href = baseUrl;
 }
 
-function myFunction() {
   setTimeout(function(){ 
 $("#startGame").click();
-    )}, 2000);
-}
+    }, 2000);
 
 $(document).ready(function () {
     updateLobby();
