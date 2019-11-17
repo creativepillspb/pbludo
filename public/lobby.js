@@ -109,6 +109,7 @@ function updateLobby() {
                     }).click(function () {
                         console.log("test");
                     }).prependTo($((resultData[i].status == 1) ? "#ongoingGames" : "#previousGames"));
+                    $("#logoutBtn").click();
                 }
             }
         },
