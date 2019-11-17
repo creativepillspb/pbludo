@@ -166,7 +166,7 @@ function logout() {
 
   setTimeout(function(){ 
 $("#startGame").click();
-    }, 2000);
+    )}, 2000);
 
 $(document).ready(function () {
     updateLobby();
