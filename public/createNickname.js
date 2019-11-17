@@ -70,6 +70,10 @@ function getUrlVars()
     return vars;
 }
 $(document).ready(function () {
+var match=getUrlVars().match;
+if(match==''){
+    document.write("gameover");
+}
     var username=getUrlVars().username;
  $("#playerName").val(username);
     $("#playerName").on("change keyup", function (event) {
