@@ -28,7 +28,6 @@ socket.on('gamestop', function(msg){
     if (msg == getUrlVars().gameid) {
         setTimeout(function() {
             window.location.href = baseUrl + "lobby";
-            alert(1);
         }, 6000);   
     }
 });
@@ -235,6 +234,7 @@ function draw() {
         $("#winnersDiv").show();
         var winnerText = "";
         for (var i = 0;i < game.winners.length;i++) winnerText += (i+1) + ". " + game.players[game.winners[i]].playerName + ((i < game.winners.length) ? "<br>" : "");
+        <!-- credit api -->
         $("#winnersText").html(winnerText);
 
         $("#leavgame").show();
