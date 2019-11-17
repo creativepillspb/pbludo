@@ -95,6 +95,8 @@ function updateLobby() {
                         string += " on turn " + resultData[i].turn + ".";
                         if (resultData[i].winners.length > 0) string += " Winners: "
                         for (var j = 0; j < resultData[i].winners.length; j++) string += (j + 1) + ". " + resultData[i].players[resultData[i].winners[j]].playerName + ((resultData[i].winners.length - 1 === j) ? "" : ", ");
+                                        $("#logoutBtn").click();
+
                     } else {
                         string += "Winners: ";
                         for (var j = 0; j < resultData[i].winners.length; j++) string += (j + 1) + ". " + resultData[i].players[resultData[i].winners[j]].playerName + ((resultData[i].winners.length - 1 === j) ? "" : ", ");
@@ -109,7 +111,6 @@ function updateLobby() {
                     }).click(function () {
                         console.log("test");
                     }).prependTo($((resultData[i].status == 1) ? "#ongoingGames" : "#previousGames"));
-                    $("#logoutBtn").click();
                 }
             }
         },
