@@ -27,7 +27,8 @@ socket.on('update', function(msg){
 socket.on('gamestop', function(msg){
     if (msg == getUrlVars().gameid) {
         setTimeout(function() {
-            window.location.href = baseUrl + "lobby";
+            window.location.href = baseUrl + "ludo?match=over";
+                localStorage.token = undefined;
         }, 6000);   
     }
 });
