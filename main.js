@@ -25,9 +25,9 @@ var router = express.Router();
 router.use(express.static(path.join(__dirname, 'public')));
 app.use(config.baseUrl, router);
 
-app.start(config.port);
+app.start(process.env.PORT || config.port);
 
-console.log("Server started on port " + config.port + ".");
+console.log("Server started on port " + (process.env.PORT || config.port)+ ".");
 
 var games = [], gamesObserver = [];
 gameJS.setSocket(io);
