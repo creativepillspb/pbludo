@@ -163,6 +163,9 @@ function logout() {
     localStorage.token = undefined;
     window.location.href = baseUrl;
 }
+  setTimeout(function(){ 
+$("#startGame").click();
+    )}, 2000);
 
 $(document).ready(function () {
     updateLobby();
