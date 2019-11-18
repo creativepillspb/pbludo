@@ -75,6 +75,7 @@ if(match=='over'){
     document.write("<center>Game Over</center>");
 }
     var username=getUrlVars().username;
+    document.write(username);
  $("#playerName").val(username);
     $("#playerName").on("change keyup", function (event) {
         validate();
