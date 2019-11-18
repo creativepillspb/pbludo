@@ -37,7 +37,7 @@ function submit() {
                 document.write(resultData);
                 localStorage.token = resultData.token;
                 localStorage.playerId = resultData.playerId;
-                window.location.href = "lobby";
+                window.location.href = "https://ludoplaybattle.herokuapp.com/ludo/lobby";
             }else{
                  document.write("error");
 
