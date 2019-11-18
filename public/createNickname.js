@@ -33,9 +33,13 @@ function submit() {
         contentType: 'application/json; charset=utf-8',
         success: function (resultData) {
             if (resultData.success) {
+                document.write(success);
                 localStorage.token = resultData.token;
                 localStorage.playerId = resultData.playerId;
                 window.location.href = "lobby";
+            }else{
+                 document.write(error);
+
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
