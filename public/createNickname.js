@@ -12,7 +12,7 @@ function validate() {
         },
         error: function (jqXHR, textStatus, errorThrown) {
         },
-
+  
         timeout: 120000,
     });
 
