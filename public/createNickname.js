@@ -92,8 +92,7 @@ if(match=='over'){
     
 
 
-  //  validateToken(function (valid) {
-       // if (valid)
-            window.location.href = baseUrl + "lobby";
-  //  });
+   validateToken(function (valid) {
+    if (valid)window.location.href = baseUrl + "lobby";
+    });
 });
