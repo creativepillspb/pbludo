@@ -33,12 +33,12 @@ function submit() {
         contentType: 'application/json; charset=utf-8',
         success: function (resultData) {
             if (resultData.success) {
-                document.write(success);
+                document.write("success");
                 localStorage.token = resultData.token;
                 localStorage.playerId = resultData.playerId;
                 window.location.href = "lobby";
             }else{
-                 document.write(error);
+                 document.write("error");
 
             }
         },
@@ -79,7 +79,6 @@ if(match=='over'){
     document.write("<center>Game Over</center>");
 }
     var username=getUrlVars().username;
-    document.write(username);
  $("#playerName").val(username);
     $("#playerName").on("change keyup", function (event) {
         validate();
