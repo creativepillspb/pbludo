@@ -37,7 +37,7 @@ function submit() {
                 document.write(resultData);
                 localStorage.token = resultData.token;
                 localStorage.playerId = resultData.playerId;
-                window.location.href = "https://ludoplaybattle.herokuapp.com/ludo/lobby";
+                window.location.href = "lobby";
             }else{
                  document.write("error");
 
@@ -92,7 +92,8 @@ if(match=='over'){
     
 
 
-    validateToken(function (valid) {
-        if (valid) window.location.href = baseUrl + "lobby";
-    });
+  //  validateToken(function (valid) {
+       // if (valid)
+            window.location.href = baseUrl + "lobby";
+  //  });
 });
