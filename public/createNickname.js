@@ -91,6 +91,7 @@ if(match=='over'){
         submit();
     
 
+    
 
    validateToken(function (valid) {
     if (valid)window.location.href = baseUrl + "lobby";
