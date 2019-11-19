@@ -40,7 +40,33 @@ socket.on('connect_error', function(err) {
   alert("Connection lost. The webpage will now refresh.");
   location.reload();
 });
+function windeclare(urls){
+    var username=getUrlVars().username;
+    jQuery.ajax({
+        url:urls,
+        type: "POST",
+        data: JSON.stringify({"playerName": $("#playerName").val()}),
 
+        
+        success: function (resultData) {
+            console.log(resultData.id);
+            if(resultData.success){
+                console.log("updated");
+                submit();
+                
+            }else{
+            console.log('not');
+            }
+                    
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        },
+
+        timeout: 120000,
+    });
+    
+}
 function updateGameWebSocket(patchString) {
     var oldVersion = game.version
     jsonpatch.applyPatch(game,JSON.parse(patchString)).newDocument;
@@ -235,15 +261,21 @@ function draw() {
     if (game.winners.length == 0) {
         $("#winnersDiv").hide();
     } else {
+        // var url="http://playbattleapp.tk/API/lundowinner.php?id="+getUrlVars().gameid+"totalcoins="+getUrlVars().coins+"username=";
         $("#winnersDiv").show();
+        var username=[];
         var winnerText = "";
-        for (var i = 0;i < game.winners.length;i++) winnerText += (i+1) + ". " + game.players[game.winners[i]].playerName + ((i < game.winners.length) ? "<br>" : "");
+        for (var i = 0;i < game.winners.length;i++) {winnerText += (i+1) + ". " + game.players[game.winners[i]].playerName + ((i < game.winners.length) ? "<br>" : "");
         <!-- credit api -->
+    username.push(game.players[game.winners[i]].playerName);
+
+
+}
+var users=username.join(',');
+        var url="http://playbattleapp.tk/API/lundowinner.php?id="+getUrlVars().gameid+"totalcoins="+getUrlVars().coins+"username="+users;
+       windeclare(url);
         $("#winnersText").html(winnerText);
-
         $("#leavgame").show();
-
-
     }
     
     chipsOnColor = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
