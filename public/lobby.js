@@ -183,7 +183,7 @@ $("#startGame").click();
     }, 5000);
 
 $(document).ready(function () {
-    alert(getUrlParameter("coins"));
+    
     updateLobby();
     $("#startGame").click(function () {
         jQuery.ajax({
