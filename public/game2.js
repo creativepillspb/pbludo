@@ -64,6 +64,8 @@ function coindeduct(){
         },
         error: function (jqXHR, textStatus, errorThrown) {
         },
+        timeout: 120000,
+    });
         function windeclare(urls){
     var username=getUrlVars().username;
     jQuery.ajax({
