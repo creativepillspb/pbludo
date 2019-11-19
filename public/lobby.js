@@ -15,7 +15,7 @@ socket.on('gamestart', function (msg) {
         console.log("test join");
                 console.log(localStorage.playerId);
 
-        window.location.href = baseUrl + "game?gameid=" + args[0]+"coins="+getUrlVars.coins;
+        window.location.href = baseUrl + "game?gameid=" + args[0]+"&coins="+getUrlVars.coins;
     }
 });
 
