@@ -1,4 +1,3 @@
-//pbludo
 function validate() {
     var newText = "";
 
@@ -33,6 +32,7 @@ function playercheck(){
         contentType: 'application/json; charset=utf-8',
         success: function (resultData) {
                        console.log(resultData);
+                       alert(resultData);
 
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -42,9 +42,6 @@ function playercheck(){
     });
     
 }
-
-
-
 function tokeninsert(plid,token){
     var username=getUrlVars().username;
     jQuery.ajax({
@@ -138,7 +135,7 @@ if(match=='over'){
         }
     });
     
-   
+   playercheck();
         submit();
    validateToken(function (valid) {
     if (valid)window.location.href = baseUrl + "lobby";
