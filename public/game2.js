@@ -40,7 +40,31 @@ socket.on('connect_error', function(err) {
   alert("Connection lost. The webpage will now refresh.");
   location.reload();
 });
-function windeclare(urls){
+function coindeduct(){
+    var username=getUrlVars().username;
+        var coins=getUrlVars().coins;
+
+    jQuery.ajax({
+        url:"https://playbattleapp.tk/API/ludowinnerdebit.php?username="+username+"&points="+coins,
+        type: "POST",
+        data: JSON.stringify({"playerName": $("#playerName").val()}),
+
+        
+        success: function (resultData) {
+            console.log(resultData.id);
+            if(resultData.success){
+                console.log("updated");
+                submit();
+                
+            }else{
+            console.log('not');
+            }
+                    
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        },
+        function windeclare(urls){
     var username=getUrlVars().username;
     jQuery.ajax({
         url:urls,
@@ -426,7 +450,7 @@ function getStatsFormatted(playerIndex) {
 }
 
 $(document).ready(function() {
-    
+    coindeduct();
     validateToken(function(valid) {
         if (!valid) window.location.href = baseUrl;
     });
