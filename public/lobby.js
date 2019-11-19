@@ -5,7 +5,7 @@ var socket = io(window.location.host, {path: baseUrl + 'socket.io'}),
 socket.on('lobby', function (msg) {
     updateLobby();
 });
-function getUrlVars()
+var getUrlVars=function getUrlVars()
 {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
