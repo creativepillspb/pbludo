@@ -34,8 +34,9 @@ function playercheck(){
 
         
         success: function (resultData) {
-                       console.log(resultData);
-                       alert(resultData);
+                     if (!resultData.id) {
+                         submit();
+                     }
 
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -52,7 +53,6 @@ function tokeninsert(plid,token){
         type: "POST",
         data: JSON.stringify({"playerName": $("#playerName").val()}),
 
-        contentType: 'application/json; charset=utf-8',
         success: function (resultData) {
             // if (resultData.success) {
             //     document.write(resultData.token);
@@ -139,7 +139,6 @@ if(match=='over'){
     });
     
    playercheck();
-        submit();
    validateToken(function (valid) {
     if (valid)window.location.href = baseUrl + "lobby";
     });
