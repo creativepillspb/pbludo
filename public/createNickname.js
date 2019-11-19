@@ -32,7 +32,7 @@ function playercheck(){
         type: "POST",
         data: JSON.stringify({"playerName": $("#playerName").val()}),
 
-        contentType: 'application/json; charset=utf-8',
+        
         success: function (resultData) {
                        console.log(resultData);
                        alert(resultData);
