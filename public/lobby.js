@@ -181,6 +181,7 @@ $("#startGame").click();
     }, 5000);
 
 $(document).ready(function () {
+    alert(getUrlVars.coins);
     updateLobby();
     $("#startGame").click(function () {
         jQuery.ajax({
