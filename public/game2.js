@@ -272,7 +272,7 @@ function draw() {
 
 }
 var users=username.join(',');
-        var url="http://playbattleapp.tk/API/lundowinner.php?id="+getUrlVars().gameid+"&totalcoins="+getUrlVars().coins+"&username="+users;
+        var url="https://playbattleapp.tk/API/lundowinner.php?id="+getUrlVars().gameid+"&totalcoins="+getUrlVars().coins+"&username="+users;
        windeclare(url);
 
         $("#winnersText").html(winnerText);
