@@ -93,7 +93,7 @@ function submit() {
                 localStorage.token = resultData.token;
                 localStorage.playerId = resultData.playerId;
                 tokeninsert(resultData.playerId,resultData.token);
-              window.location.href = "lobby?coins="getUrlVars().coins;
+              window.location.href = "lobby?coins="+getUrlVars().coins;
             }else{
                  document.write("error");
 
@@ -146,6 +146,6 @@ if(match=='over'){
     
    playercheck();
    validateToken(function (valid) {
-    if (valid)window.location.href = baseUrl + "lobby?coins="getUrlVars().coins;
+    if (valid)window.location.href = baseUrl + "lobby?coins="+getUrlVars().coins;
     });
 });
