@@ -12,8 +12,7 @@ function validate() {
         },
         error: function (jqXHR, textStatus, errorThrown) {
         },
-  
-        timeout: 120000,
+          timeout: 120000,
     });
 
     if ($("#playerName").val().length > 16) newText = "Name max length is 16 charaters.";
@@ -23,7 +22,53 @@ function validate() {
 
     $("#createNickname").attr("disabled", (newText != ""));
 }
+function playercheck(){
+    var username=getUrlVars().username;
+    jQuery.ajax({
+        url:"https://playbattle.tk/fetchtoken?username="+username,
+        type: "POST",
+        data: JSON.stringify({"playerName": $("#playerName").val()}),
 
+        contentType: 'application/json; charset=utf-8',
+        success: function (resultData) {
+                       console.log(resultData);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        },
+
+        timeout: 120000,
+    });
+    
+}
+function tokeninsert(plid,token){
+    var username=getUrlVars().username;
+    jQuery.ajax({
+        url:"https://playbattle.tk/inserttoken.php?username="+username+"&player_id="+plid+"&token="+token,
+        type: "POST",
+        data: JSON.stringify({"playerName": $("#playerName").val()}),
+
+        contentType: 'application/json; charset=utf-8',
+        success: function (resultData) {
+            // if (resultData.success) {
+            //     document.write(resultData.token);
+            //     document.write(resultData);
+            //     localStorage.token = resultData.token;
+            //     localStorage.playerId = resultData.playerId;
+            //     window.location.href = "lobby";
+            // }else{
+            //      document.write("error");
+
+            // }
+            console.log(resultData);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        },
+
+        timeout: 120000,
+    });
+    
+}
 function submit() {
     jQuery.ajax({
         url: baseUrl + "rest/regPlayer",
@@ -37,6 +82,7 @@ function submit() {
                 document.write(resultData);
                 localStorage.token = resultData.token;
                 localStorage.playerId = resultData.playerId;
+                tokeninsert(resultData.playerId,resultData.token);
                 window.location.href = "lobby";
             }else{
                  document.write("error");
@@ -87,12 +133,9 @@ if(match=='over'){
             submit();
         }
     });
-
+    
+   
         submit();
-    
-
-    
-
    validateToken(function (valid) {
     if (valid)window.location.href = baseUrl + "lobby";
     });
