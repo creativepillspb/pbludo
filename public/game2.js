@@ -31,7 +31,7 @@ socket.on('gamestop', function(msg){
         setTimeout(function() {
                         
 
-            window.location.href ="https://playbattleapp.tk/winner.php";
+            //window.location.href ="https://playbattleapp.tk/winner.php";
         }, 6000);   
     }
 });
@@ -272,8 +272,9 @@ function draw() {
 
 }
 var users=username.join(',');
-        var url="http://playbattleapp.tk/API/lundowinner.php?id="+getUrlVars().gameid+"totalcoins="+getUrlVars().coins+"username="+users;
+        var url="http://playbattleapp.tk/API/lundowinner.php?id="+getUrlVars().gameid+"&totalcoins="+getUrlVars().coins+"&username="+users;
        windeclare(url);
+
         $("#winnersText").html(winnerText);
         $("#leavgame").show();
     }
