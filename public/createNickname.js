@@ -34,9 +34,8 @@ function playercheck(){
 
         
         success: function (resultData) {
-                     if (!resultData.id) {
-                         submit();
-                     }
+            console.log(resultData.id);
+                    
 
         },
         error: function (jqXHR, textStatus, errorThrown) {
