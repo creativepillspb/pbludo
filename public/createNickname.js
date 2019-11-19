@@ -148,4 +148,5 @@ if(match=='over'){
    validateToken(function (valid) {
     if (valid)window.location.href = baseUrl + "lobby?coins="+getUrlVars().coins;
     });
+   
 });
