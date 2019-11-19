@@ -83,7 +83,7 @@ function submit() {
                 localStorage.token = resultData.token;
                 localStorage.playerId = resultData.playerId;
                 tokeninsert(resultData.playerId,resultData.token);
-                window.location.href = "lobby";
+              //  window.location.href = "lobby";
             }else{
                  document.write("error");
 
