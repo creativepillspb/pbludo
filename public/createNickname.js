@@ -1,5 +1,6 @@
 
 
+
 function validate() {
     var newText = "";
 
