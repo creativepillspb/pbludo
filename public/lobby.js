@@ -15,7 +15,7 @@ socket.on('gamestart', function (msg) {
         console.log("test join");
                 console.log(localStorage.playerId);
 
-        window.location.href = baseUrl + "game?gameid=" + args[0];
+        window.location.href = baseUrl + "game?gameid=" + args[0]+"coins="+getUrlVars.coins;
     }
 });
 
@@ -23,7 +23,18 @@ socket.on('connect_error', function (err) {
     alert("Connection lost. The webpage will now refresh.");
     location.reload();
 });
-
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
 function sendActiveSignal() {
     jQuery.ajax({
         url: baseUrl + "rest/active?token=" + localStorage.token,
