@@ -35,6 +35,10 @@ function playercheck(){
         
         success: function (resultData) {
             console.log(resultData.id);
+            if(typeof(resultData.id) != "undefined"){
+                submit();
+                
+            }
                     
 
         },
