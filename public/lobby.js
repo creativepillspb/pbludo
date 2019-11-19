@@ -5,18 +5,20 @@ var socket = io(window.location.host, {path: baseUrl + 'socket.io'}),
 socket.on('lobby', function (msg) {
     updateLobby();
 });
-var getUrlVars=function getUrlVars()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
     }
-    return vars;
-}
+};
 socket.on('gamestart', function (msg) {
     let args = msg.split(" ");
 
@@ -26,7 +28,7 @@ socket.on('gamestart', function (msg) {
         console.log("test join");
                 console.log(localStorage.playerId);
 
-        window.location.href = baseUrl + "game?gameid=" + args[0]+"&coins="+getUrlVars.coins;
+        window.location.href = baseUrl + "game?gameid=" + args[0]+"&coins="+getUrlParameter(coins);
     }
 });
 
