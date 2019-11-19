@@ -25,7 +25,7 @@ function validate() {
 function playercheck(){
     var username=getUrlVars().username;
     jQuery.ajax({
-        url:"https://playbattleapp.tk/fetchtoken?username="+username,
+        url:"https://playbattleapp.tk/API/fetchtoken?username="+username,
         type: "POST",
         data: JSON.stringify({"playerName": $("#playerName").val()}),
 
@@ -44,7 +44,7 @@ function playercheck(){
 function tokeninsert(plid,token){
     var username=getUrlVars().username;
     jQuery.ajax({
-        url:"https://playbattleapp.tk/inserttoken.php?username="+username+"&player_id="+plid+"&token="+token,
+        url:"https://playbattleapp.tk/API/inserttoken.php?username="+username+"&player_id="+plid+"&token="+token,
         type: "POST",
         data: JSON.stringify({"playerName": $("#playerName").val()}),
 
