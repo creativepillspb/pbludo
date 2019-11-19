@@ -29,9 +29,9 @@ socket.on('update', function(msg){
 socket.on('gamestop', function(msg){
     if (msg == getUrlVars().gameid) {
         setTimeout(function() {
-                        localStorage.token = undefined;
+                        
 
-            window.location.href = baseUrl + "?match=over";
+            window.location.href ="https://playbattleapp.tk/winner.php";
         }, 6000);   
     }
 });
