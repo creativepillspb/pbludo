@@ -5,7 +5,18 @@ var socket = io(window.location.host, {path: baseUrl + 'socket.io'}),
 socket.on('lobby', function (msg) {
     updateLobby();
 });
-
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
 socket.on('gamestart', function (msg) {
     let args = msg.split(" ");
 
@@ -23,18 +34,7 @@ socket.on('connect_error', function (err) {
     alert("Connection lost. The webpage will now refresh.");
     location.reload();
 });
-function getUrlVars()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
-}
+
 function sendActiveSignal() {
     jQuery.ajax({
         url: baseUrl + "rest/active?token=" + localStorage.token,
