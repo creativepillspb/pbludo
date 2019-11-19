@@ -42,6 +42,9 @@ function playercheck(){
     });
     
 }
+
+
+
 function tokeninsert(plid,token){
     var username=getUrlVars().username;
     jQuery.ajax({
