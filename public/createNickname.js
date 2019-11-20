@@ -27,7 +27,8 @@ function validate() {
 }
 function playercheck(){
     var username=getUrlVars().username;
-    
+            console.log(localStorage.getItem("playerId"));
+    console.log(localStorage.getItem());
             if(localStorage.getItem("playerId") === null){
                 console.log(resultData.username);
                 submit();
