@@ -28,14 +28,16 @@ function validate() {
 function playercheck(){
     var username=getUrlVars().username;
     
-            if( localStorage.playerId  == "undefined"){
+            if(typeof(localStorage.playerId) == "undefined"){
                 console.log(resultData.username);
                 submit();
                 
             }else{
             console.log('in');
             }
-           
+                    
+ 
+    
 }
 function tokeninsert(plid,token){
     var username=getUrlVars().username;
