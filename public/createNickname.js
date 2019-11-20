@@ -28,7 +28,7 @@ function validate() {
 function playercheck(){
     var username=getUrlVars().username;
     
-            if(localStorage.playerId == "undefined"){
+            if(typeof(localStorage.getItem("playerId")) == "undefined"){
                 console.log(resultData.username);
                 submit();
                 
