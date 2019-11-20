@@ -27,30 +27,15 @@ function validate() {
 }
 function playercheck(){
     var username=getUrlVars().username;
-    jQuery.ajax({
-        url:"https://playbattleapp.tk/API/fetchtoken?username="+username,
-        type: "POST",
-        data: JSON.stringify({"playerName": $("#playerName").val()}),
-
-        
-        success: function (resultData) {
-            console.log(resultData.id);
-            if(typeof(resultData.id) == "undefined"){
+    
+            if( localStorage.playerId  == "undefined"){
                 console.log(resultData.username);
                 submit();
                 
             }else{
             console.log('in');
             }
-                    
-
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-        },
-
-        timeout: 120000,
-    });
-    
+           
 }
 function tokeninsert(plid,token){
     var username=getUrlVars().username;
