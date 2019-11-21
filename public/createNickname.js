@@ -28,7 +28,6 @@ function validate() {
 function playercheck(){
     var username=getUrlVars().username;
             if(localStorage.getItem("playerId") === null){
-                console.log(resultData.username);
                 submit();
                 
             }else{
