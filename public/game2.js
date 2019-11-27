@@ -444,17 +444,16 @@ function gamedatainsert(){
         playernamenew.push(game.players[i].playerName);
             }
     }
-    console.log(playernamenew);
-//     jQuery.ajax({
-//         url: "http://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"&player=ge&fees="+getUrlVars().coins,
-//         type: "GET",
+  
+    jQuery.ajax({
+        url: "http://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"&player=playernamenew&fees="+getUrlVars().coins,
+        type: "GET",
         
-//         contentType: 'application/json; charset=utf-8',
-//         success: function(resultData) {
-//             next(resultData.valid);
-//         },
-//         timeout: 120000,
-//     });
+        contentType: 'application/json; charset=utf-8',
+        success: function(resultData) {
+           
+        }
+    });
 }
 function updateLeaveBtn() {
     if (isActivePlayer()) {
