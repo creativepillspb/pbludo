@@ -625,5 +625,5 @@ $(document).ready(function() {
         }
     }
     });
-    setTimeout(function(){ gamedatainsert(); }, 3000); 
+   
 });
