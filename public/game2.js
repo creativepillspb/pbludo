@@ -115,6 +115,7 @@ function updateGame(cb) {
         success: function(resultData) {
             if (typeof resultData.redirect == 'string') window.location = resultData.redirect;
             game = resultData;
+            alert(resultData);
             setTimeout(function() {
                 draw();
                 if (cb) cb();
@@ -431,7 +432,20 @@ function validateToken(next) {
         timeout: 120000,
     });
 }
-
+function gamedatainsert() {
+    var gameids=Math.floor((Math.random() * 100000) + 1);
+    
+    jQuery.ajax({
+        url: "http://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"&player=ge&fees="+getUrlVars().coins,
+        type: "GET",
+        
+        contentType: 'application/json; charset=utf-8',
+        success: function(resultData) {
+            next(resultData.valid);
+        },
+        timeout: 120000,
+    });
+}
 function updateLeaveBtn() {
     if (isActivePlayer()) {
         $("#leaveGame").text("Give up")
