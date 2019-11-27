@@ -2,6 +2,7 @@
 var isPlayer = 0;
 
 var game = null,
+    var gameids=Math.floor((Math.random() * 100000) + 1);
     socket = io(window.location.host, {path: baseUrl + 'socket.io'});;
 
 var drawedAt = [], 
@@ -118,6 +119,7 @@ function updateGame(cb) {
           
             setTimeout(function() {
                 draw();
+                gamedatainsert();
               
                 if (cb) cb();
                 //$( window ).trigger("resize");    
@@ -435,7 +437,7 @@ function validateToken(next) {
 }
 
 function gamedatainsert(){
-    var gameids=Math.floor((Math.random() * 100000) + 1);
+    
     var playernamenew=[];
     for (var i = 0;i < 4;i++) {
        
