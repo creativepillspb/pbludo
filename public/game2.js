@@ -115,7 +115,7 @@ function updateGame(cb) {
         success: function(resultData) {
             if (typeof resultData.redirect == 'string') window.location = resultData.redirect;
             game = resultData;
-           gamedatainsert();
+          
             setTimeout(function() {
                 draw();
                 if (cb) cb();
