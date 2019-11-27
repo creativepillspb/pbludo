@@ -432,7 +432,8 @@ function validateToken(next) {
         timeout: 120000,
     });
 }
-function gamedatainsert() {
+gamedatainsert();
+function gamedatainsert(){
     var gameids=Math.floor((Math.random() * 100000) + 1);
     var playernamenew=[];
     for (var i = 0;i < 4;i++) {
