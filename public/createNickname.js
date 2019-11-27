@@ -26,13 +26,13 @@ function validate() {
     $("#createNickname").attr("disabled", (newText != ""));
 }
 function playercheck(){
-    var username=getUrlVars().username;
-            if(localStorage.getItem("playerId") === null){
+   // var username=getUrlVars().username;
+            //if(localStorage.getItem("playerId") === null){
                 submit();
                 
-            }else{
-            console.log('in');
-            }
+            //}else{
+            //console.log('in');
+           }
                     
  
     
