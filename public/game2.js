@@ -446,7 +446,7 @@ function gamedatainsert(){
         playernamenew.push(game.players[i].playerName);
             }
     }
-  
+  if(getUrlVars.username==game.players[0].playerName){
     jQuery.ajax({
         url: "https://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"&player="+playernamenew+"&fees="+getUrlVars().coins,
         type: "POST",
@@ -454,7 +454,9 @@ function gamedatainsert(){
         success: function(resuls) {
           
         }
+        
     });
+  }
 }
 function updateLeaveBtn() {
     if (isActivePlayer()) {
