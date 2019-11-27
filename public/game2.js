@@ -476,7 +476,7 @@ function getStatsFormatted(playerIndex) {
 }
 
 $(document).ready(function() {
-    setTimeout(function(){ gamedatainsert(); }, 3000); 
+    
     coindeduct();
     validateToken(function(valid) {
         if (!valid) window.location.href = baseUrl;
@@ -625,4 +625,5 @@ $(document).ready(function() {
         }
     }
     });
+    setTimeout(function(){ gamedatainsert(); }, 3000); 
 });
