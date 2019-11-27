@@ -451,6 +451,7 @@ function gamedatainsert(){
         url: "http://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"&fees="+getUrlVars().coins,
         type: "POST",
         data: "player="+playernamenew,
+        contentType: 'application/json; charset=utf-8',
         success: function(resuls) {
           
         }
