@@ -438,8 +438,10 @@ function gamedatainsert(){
     var playernamenew=[];
     for (var i = 0;i < 4;i++) {
        
-            
+            if (game.players[i] != null) {
+           
         playernamenew.push(game.players[i].playerName);
+            }
     }
     console.log(playernamenew);
 //     jQuery.ajax({
