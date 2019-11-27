@@ -32,7 +32,7 @@ function playercheck(){
                 
             //}else{
             //console.log('in');
-           }
+           //}
                     
  
     
