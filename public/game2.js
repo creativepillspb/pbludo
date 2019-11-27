@@ -288,7 +288,7 @@ function draw() {
             else $("#playerText-"+i).removeClass("possiblePos");
         }
     }
-    
+    console.log(game.winners);
     if (game.winners.length == 0) {
         $("#winnersDiv").hide();
     } else {
