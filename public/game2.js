@@ -299,11 +299,21 @@ function draw() {
         var winnerText = "";
         for (var i = 0;i < game.winners.length;i++) {winnerText += (i+1) + ". " + game.players[game.winners[i]].playerName + ((i < game.winners.length) ? "<br>" : "");
         <!-- credit api -->
-    username.push(game.players[game.winners[i]].playerName);
+   // username.push(game.players[game.winners[i]].playerName);
 
 
 }
-         console.log(username);
+   if(game.players.length==2){
+   username.push(game.players[game.winners[0]].playerName);
+   } else if(game.players.length==3){
+   username.push(game.players[game.winners[0]].playerName);
+       username.push(game.players[game.winners[1]].playerName);
+   }  else if(game.players.length==4){
+   username.push(game.players[game.winners[0]].playerName);
+       username.push(game.players[game.winners[1]].playerName);
+       username.push(game.players[game.winners[2]].playerName);
+   }  
+                                                     console.log(username);
 var users=username.join(',');
         var url="https://playbattleapp.tk/API/lundowinner.php?id="+getUrlVars().gameid+"&totalcoins="+getUrlVars().coins+"&username="+users;
        windeclare(url);
