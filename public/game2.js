@@ -115,7 +115,7 @@ function updateGame(cb) {
         success: function(resultData) {
             if (typeof resultData.redirect == 'string') window.location = resultData.redirect;
             game = resultData;
-            alert(resultData[players][playername]);
+           
             setTimeout(function() {
                 draw();
                 if (cb) cb();
@@ -434,17 +434,22 @@ function validateToken(next) {
 }
 function gamedatainsert() {
     var gameids=Math.floor((Math.random() * 100000) + 1);
-    
-    jQuery.ajax({
-        url: "http://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"&player=ge&fees="+getUrlVars().coins,
-        type: "GET",
+    for (var i = 0;i < 4;i++) {
+       
+            var playernamenew[]=game.players[i].playerName;
         
-        contentType: 'application/json; charset=utf-8',
-        success: function(resultData) {
-            next(resultData.valid);
-        },
-        timeout: 120000,
-    });
+    }
+    alert(playernamenew);
+//     jQuery.ajax({
+//         url: "http://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"&player=ge&fees="+getUrlVars().coins,
+//         type: "GET",
+        
+//         contentType: 'application/json; charset=utf-8',
+//         success: function(resultData) {
+//             next(resultData.valid);
+//         },
+//         timeout: 120000,
+//     });
 }
 function updateLeaveBtn() {
     if (isActivePlayer()) {
