@@ -2,7 +2,7 @@
 var isPlayer = 0;
 
 var game = null,
-    var gameids=Math.floor((Math.random() * 100000) + 1);
+    
     socket = io(window.location.host, {path: baseUrl + 'socket.io'});;
 
 var drawedAt = [], 
@@ -11,7 +11,7 @@ var drawedAt = [],
     multipleStackDrawCounter = 0,
     chipsOnColor = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
   
-  
+  var gameids=Math.floor((Math.random() * 100000) + 1);
 socket.on('update', function(msg){
     msg = [msg.split(' ',1).toString(), msg.split(' ').slice(1).join(' ')];
     if (msg[0] == getUrlVars().gameid) {
