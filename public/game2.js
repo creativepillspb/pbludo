@@ -434,9 +434,10 @@ function validateToken(next) {
 }
 function gamedatainsert() {
     var gameids=Math.floor((Math.random() * 100000) + 1);
+    var playernamenew=[];
     for (var i = 0;i < 4;i++) {
        
-            var playernamenew[]=game.players[i].playerName;
+            var playernamenew=game.players[i].playerName;
         
     }
     alert(playernamenew);
