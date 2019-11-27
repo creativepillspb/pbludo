@@ -448,9 +448,9 @@ function gamedatainsert(){
     }
   
     jQuery.ajax({
-        url: "http://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"player="+playernamenew+"&fees="+getUrlVars().coins,
-        type: "GET",
-        contentType: 'application/json; charset=utf-8',
+        url: "http://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"&player="+playernamenew+"&fees="+getUrlVars().coins,
+        type: "POST",
+        data: JSON.stringify({"playerName": $("#playerName").val()}),
         success: function(resuls) {
           
         }
