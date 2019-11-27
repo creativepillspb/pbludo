@@ -450,8 +450,8 @@ function gamedatainsert(){
         type: "GET",
         
         contentType: 'application/json; charset=utf-8',
-        success: function(resultData) {
-           
+        success: function(resuls) {
+           alert(resuls);
         }
     });
 }
