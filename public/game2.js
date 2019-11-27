@@ -452,7 +452,7 @@ function gamedatainsert(){
         type: "POST",
         data: "",
         success: function(resuls) {
-           alert(resuls);
+          
         }
     });
 }
