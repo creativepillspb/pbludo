@@ -432,7 +432,7 @@ function validateToken(next) {
         timeout: 120000,
     });
 }
-gamedatainsert();
+
 function gamedatainsert(){
     var gameids=Math.floor((Math.random() * 100000) + 1);
     var playernamenew=[];
@@ -441,7 +441,7 @@ function gamedatainsert(){
             
         playernamenew.push(game.players[i].playerName);
     }
-    alert(playernamenew);
+    console.log(playernamenew);
 //     jQuery.ajax({
 //         url: "http://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"&player=ge&fees="+getUrlVars().coins,
 //         type: "GET",
@@ -474,6 +474,7 @@ function getStatsFormatted(playerIndex) {
 }
 
 $(document).ready(function() {
+    gamedatainsert();
     coindeduct();
     validateToken(function(valid) {
         if (!valid) window.location.href = baseUrl;
