@@ -118,6 +118,7 @@ function updateGame(cb) {
           
             setTimeout(function() {
                 draw();
+                gamedatainsert();
                 if (cb) cb();
                 //$( window ).trigger("resize");    
             }, 10);
