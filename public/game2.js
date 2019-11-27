@@ -474,7 +474,7 @@ function getStatsFormatted(playerIndex) {
 }
 
 $(document).ready(function() {
-    gamedatainsert();
+   
     coindeduct();
     validateToken(function(valid) {
         if (!valid) window.location.href = baseUrl;
