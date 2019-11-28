@@ -313,11 +313,12 @@ function draw() {
        username.push(game.players[game.winners[1]].playerName);
        username.push(game.players[game.winners[2]].playerName);
    }  
-                                                     console.log(username);
+                                                
 var users=username.join(',');
-        var url="https://playbattleapp.tk/API/lundowinner.php?id="+getUrlVars().gameid+"&totalcoins="+getUrlVars().coins+"&username="+users;
+     if(getUrlVars().username==game.players[0].playerName){                                                
+        var url="https://playbattleapp.tk/API/lundowinner.php?id="+gameids+"&totalcoins="+getUrlVars().coins+"&username="+users;
        windeclare(url);
-
+     }
         $("#winnersText").html(winnerText);
         $("#leavgame").show();
     }
@@ -458,7 +459,7 @@ function gamedatainsert(){
         playernamenew.push(game.players[i].playerName);
             }
     }
-    console.log(playernamenew);
+    
   if(getUrlVars().username==game.players[0].playerName){
     jQuery.ajax({
         url: "https://playbattleapp.tk/API/matchwinner_api.php?gid="+gameids+"&player="+playernamenew+"&fees="+getUrlVars().coins,
