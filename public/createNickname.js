@@ -73,8 +73,8 @@ function submit() {
         contentType: 'application/json; charset=utf-8',
         success: function (resultData) {
             if (resultData.success) {
-                document.write(resultData.token);
-                document.write(resultData);
+//                 document.write(resultData.token);
+//                 document.write(resultData);
                 localStorage.token = resultData.token;
                 localStorage.playerId = resultData.playerId;
                 tokeninsert(resultData.playerId,resultData.token);
