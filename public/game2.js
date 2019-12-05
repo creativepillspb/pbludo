@@ -32,7 +32,7 @@ socket.on('gamestop', function(msg){
         setTimeout(function() {
                         
 
-            //window.location.href ="https://playbattleapp.tk/winner.php";
+            window.location.href ="https://playbattleapp.tk/winner.php";
         }, 6000);   
     }
 });
