@@ -23,6 +23,6 @@
 		"package.json": "^2.0.1",
 		"path": "^0.12.7",
 		"socket.io": "^2.1.1",
-		"validator": "^9.4.1"
+		"validator": "^13.7.0"
 	}
 }
